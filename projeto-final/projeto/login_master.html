@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Master - Saúde+Vida</title>
+    <link rel="stylesheet" href="geral.css">
+</head>
+<body>
+  <div class="container-login">
+    <h2>Login Master - Saúde+Vida</h2>
+    <form action="controllers/login_master.php" method="POST">
+      <input type="text" name="login" placeholder="Usuário Master" required>
+      <input type="password" name="senha" placeholder="Senha" required>
+      <input type="text" name="mae" placeholder="Nome da Mãe" required>
+      <button type="submit">Entrar</button>
+    </form>
+
+    <?php if (isset($_GET['erro'])): ?>
+      <div class="erro">❌ <?php echo htmlspecialchars($_GET['erro']); ?></div>
+    <?php endif; ?>
+  </div>
+</body>
+</html>

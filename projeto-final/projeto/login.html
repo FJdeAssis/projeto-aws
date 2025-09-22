@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Saúde+Vida</title>
+  <link rel="shortcut icon" href="img/img-logo.webp" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- MENU SUPERIOR -->
+  <header>
+    <div class="logo">
+      <a href="index.html"><img src="img/img-logo.webp" alt="Logo"></a>
+    </div>
+
+    <div class="menu-central">
+      <nav>
+        <ul>
+          <li><a href="quemsomos.html">Quem Somos</a></li>
+          <li><a href="faleconosco.html">Fale Conosco</a></li>
+          <li><a href="login.html" class="active">Login</a></li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+        </ul>
+      </nav>
+
+      <div class="acessibilidade">
+        <button>
+          <a href="controllers/login_master.php">Gerenciar Master</a>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="acessibilidade">
+    <button id="darkModeToggle" title="Modo Escuro">🌙</button>
+  </section>
+
+  <main>
+    <div class="login-container">
+      <h1>Login</h1>
+      <form action="controllers/login.php" method="POST">
+        <h4>Usuário</h4>
+        <i class="fa-solid fa-user"></i> 
+        <input type="text" name="login" placeholder="Usuário" required>
+
+        <h4>Senha</h4>
+        <i class="fa-solid fa-lock"></i> 
+        <input type="password" name="senha" placeholder="Senha" required>
+
+        <div class="links-login">
+          <ul>
+            <li><a href="recsenha.html">Esqueci minha senha</a></li>
+            <li><a href="cadastro.html">Ainda não possui cadastro?</a></li>
+          </ul>
+        </div>
+
+        <div class="botoes">
+          <button type="submit">Entrar</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <script>
+    // Alternar modo escuro
+    const toggleBtn = document.getElementById('darkModeToggle');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,480 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f9fafc;
+  color: #1d2a44;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* LOADER */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  transition: opacity 0.6s ease;
+}
+
+#loader img {
+  width: 120px;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+/* HEADER */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 50px;
+  background: #ffffff;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .logo img {
+  height: 55px;
+  transition: transform 0.3s ease;
+}
+
+header .logo img:hover {
+  transform: scale(1.05);
+}
+
+/* MENU CENTRAL */
+.menu-central {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin: 0 auto;
+}
+
+.menu-central nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.menu-central nav ul li a {
+  font-weight: 500;
+  font-size: 16px;
+  text-decoration: none;
+  color: #1d2a44;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.menu-central nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #0077ff;
+  transition: width 0.3s ease;
+}
+
+.menu-central nav ul li a:hover {
+  color: #0077ff;
+}
+
+.menu-central nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* BOTÃO MASTER */
+.menu-central .acessibilade button {
+  background: linear-gradient(135deg,#0077ff,#004aad);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 25px;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.menu-central .acessibilade button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg,#3399ff,#0055cc);
+}
+
+.menu-central .acessibilade button a {
+  color: white;
+  text-decoration: none;
+}
+
+/* DARK MODE TOGGLE */
+.acessibilidade {
+  position: fixed;
+  top: 85px;
+  right: 20px;
+  z-index: 2000;
+}
+
+#darkModeToggle {
+  padding: 12px;
+  font-size: 18px;
+  border: none;
+  background: #1565c0;
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: 0.3s ease;
+}
+
+#darkModeToggle:hover {
+  background: #0d47a1;
+}
+
+/* MAIN */
+main {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.introdução h2 {
+  font-size: 2.4rem;
+  color: #0077ff;
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+.p1 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.p1 .txt-itens {
+  flex: 1 1 55%;
+}
+
+.p1 .txt-itens h3 {
+  color: #1565c0;
+  margin-bottom: 15px;
+}
+
+.p1 .img-itens {
+  flex: 1 1 40%;
+}
+
+.p1 .img-itens img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.p2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.p2 h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #1565c0;
+}
+
+.p2 .button button {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(135deg,#1565c0,#0d47a1);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.p2 .button button:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg,#1e88e5,#1565c0);
+}
+
+.p3 p {
+  background: white;
+  padding: 18px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  border-left: 6px solid #1565c0;
+  transition: transform 0.2s ease;
+}
+
+.p3 p:hover {
+  transform: translateY(-4px);
+}
+
+/* FOOTER */
+footer {
+  background: #0d47a1;
+  color: white;
+  padding: 30px 20px;
+  margin-top: 50px;
+}
+
+footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+footer .lista {
+  list-style: none;
+}
+
+footer .lista li {
+  margin-bottom: 10px;
+}
+
+footer .lista li a {
+  color: #ddd;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+footer .lista li a:hover {
+  color: white;
+}
+
+footer .f2 a {
+  margin-right: 15px;
+  text-decoration: none;
+  color: #ddd;
+  transition: 0.3s ease;
+}
+
+footer .f2 a:hover {
+  color: #ffeb3b;
+}
+
+footer .f3 {
+  font-size: 14px;
+  color: #bbb;
+  margin-top: 15px;
+}
+
+/* DARK MODE */
+body.dark {
+  background-color: #121212;
+  color: #eee;
+}
+
+body.dark header {
+  background: #1e1e1e;
+}
+
+body.dark nav ul li a {
+  color: #eee;
+}
+
+body.dark nav ul li a:hover {
+  color: #1abc9c;
+}
+
+body.dark .p3 p {
+  background: #1e1e1e;
+  color: #ddd;
+  border-left-color: #1abc9c;
+}
+
+body.dark footer {
+  background: #111;
+}
+
+body.dark footer .lista li a,
+body.dark footer .f2 a {
+  color: #aaa;
+}
+
+body.dark footer .lista li a:hover,
+body.dark footer .f2 a:hover {
+  color: #1abc9c;
+}
+
+/* SCROLL REVEAL */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+   FORMULÁRIOS: FALE CONOSCO, LOGIN E CADASTRO
+========================= */
+
+/* Fale Conosco */
+.fale-conosco-container {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 40px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.fale-conosco-container h2 {
+  color: #1565c0;
+  margin-bottom: 20px;
+}
+
+.fale-conosco-container label {
+  font-weight: 500;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.fale-conosco-container input,
+.fale-conosco-container textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+.fale-conosco-container button {
+  background: linear-gradient(135deg,#1565c0,#0d47a1);
+  color: white;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.fale-conosco-container button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg,#1e88e5,#1565c0);
+}
+
+/* Login */
+.container-login {
+  max-width: 420px;
+  margin: 60px auto;
+  padding: 40px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+  text-align: center;
+}
+
+.container-login h2 {
+  color: #1565c0;
+  margin-bottom: 25px;
+}
+
+.container-login input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+.container-login button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(135deg,#1565c0,#0d47a1);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.container-login button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg,#1e88e5,#1565c0);
+}
+
+/* Cadastro */
+.container-cadastro {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 40px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.container-cadastro h2 {
+  color: #1565c0;
+  margin-bottom: 25px;
+}
+
+.container-cadastro label {
+  font-weight: 500;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.container-cadastro input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+.container-cadastro button {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(135deg,#1565c0,#0d47a1);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.container-cadastro button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg,#1e88e5,#1565c0);
+}

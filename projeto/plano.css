@@ -1,0 +1,218 @@
+/* ==========================
+   RESET E BASE
+========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f9fafc;
+  color: #1d2a44;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ==========================
+   CABEÇALHO
+========================== */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 50px;
+  background: #ffffff;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .logo img {
+  height: 55px;
+  transition: transform 0.3s ease;
+}
+
+header .logo img:hover {
+  transform: scale(1.05);
+}
+
+/* ==========================
+   MENU SUPERIOR
+========================== */
+.menu-central {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.menu-central nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.menu-central nav ul li a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  color: #1d2a44;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.menu-central nav ul li a:hover {
+  color: #0077ff;
+}
+
+/* ==========================
+   BOTÃO GERENCIAR MASTER
+========================== */
+.acessibilidade button {
+  background: linear-gradient(135deg, #007bff, #0056d8);
+  border: none;
+  padding: 10px 28px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+}
+
+.acessibilidade button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 123, 255, 0.6);
+  background: linear-gradient(135deg, #3399ff, #0044cc);
+}
+
+.acessibilidade button a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* ==========================
+   BOTÃO DARK MODE
+========================== */
+#acessibilidade, .acessibilidade {
+  position: relative;
+}
+
+#acessibilidade button#darkModeToggle {
+  background: #0056d8;
+  border: none;
+  color: #fff;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+}
+
+#acessibilidade button#darkModeToggle:hover {
+  transform: scale(1.1);
+  background: #007bff;
+}
+
+/* ==========================
+   CONTEÚDO DE PLANOS
+========================== */
+.container-tabelas {
+  max-width: 900px;
+  margin: 60px auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.container-tabelas h3 {
+  font-size: 1.4rem;
+  color: #004aad;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.container-tabelas table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.container-tabelas th, 
+.container-tabelas td {
+  border: 1px solid #ddd;
+  padding: 10px 14px;
+}
+
+.container-tabelas th {
+  background: #004aad;
+  color: white;
+}
+
+.container-tabelas tr:nth-child(even) {
+  background: #f3f7ff;
+}
+
+.container-tabelas a {
+  display: inline-block;
+  margin-top: 20px;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.container-tabelas a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================
+   MODO ESCURO
+========================== */
+body.dark-mode {
+  background: #121212;
+  color: #ddd;
+}
+
+body.dark-mode .container-tabelas {
+  background: #1e1e1e;
+  color: #eee;
+}
+
+body.dark-mode .container-tabelas th {
+  background: #1abc9c;
+}
+
+/* ==========================
+   RESPONSIVIDADE
+========================== */
+@media (max-width: 800px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .menu-central nav ul {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .container-tabelas {
+    padding: 20px;
+  }
+
+  .container-tabelas th, .container-tabelas td {
+    padding: 8px;
+    font-size: 14px;
+  }
+}

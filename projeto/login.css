@@ -1,0 +1,393 @@
+/* ==========================
+   RESET E BASE
+========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f9fafc;
+  color: #1d2a44;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ==========================
+   CABEÇALHO
+========================== */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 50px;
+  background: #ffffff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .logo img {
+  height: 55px;
+  transition: transform 0.3s ease;
+}
+
+header .logo img:hover {
+  transform: scale(1.05);
+}
+
+.menu-central {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.menu-central nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.menu-central nav ul li a {
+  font-weight: 500;
+  font-size: 16px;
+  text-decoration: none;
+  color: #1d2a44;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.menu-central nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #0077ff;
+  transition: width 0.3s ease;
+}
+
+.menu-central nav ul li a:hover {
+  color: #0077ff;
+}
+
+.menu-central nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* ======= BOTÃO GERENCIAR MASTER ======= */
+.acessibilidade {
+  position: relative;
+}
+
+.acessibilidade button {
+  background: linear-gradient(135deg, #0077ff, #004aad);
+  border: none;
+  padding: 10px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.acessibilidade button a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.acessibilidade button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #3399ff, #0055cc);
+}
+
+/* ==========================
+   BOTÃO DARK MODE (CANTO - AJUSTADO)
+   pequeno, discreto, não cobre conteúdo
+========================== */
+#darkModeToggle {
+  position: fixed;
+  bottom: 18px;            /* ajuste fino: afasta do canto inferior */
+  right: 18px;             /* canto direito */
+  width: 44px;             /* tamanho pequeno */
+  height: 44px;
+  padding: 0;
+  font-size: 18px;
+  line-height: 44px;
+  border: none;
+  background: #0d47a1;
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(13, 71, 161, 0.22);
+  transition: transform .14s ease, background .14s ease;
+  z-index: 1200;           /* bem acima do footer e conteúdo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#darkModeToggle:hover {
+  transform: scale(1.08);
+  background: #1565c0;
+}
+
+/* dark mode appearance for button */
+body.dark-mode #darkModeToggle {
+  background: #16a085;
+}
+body.dark-mode #darkModeToggle:hover {
+  background: #149174;
+}
+
+/* ==========================
+   CONTEÚDO PRINCIPAL
+========================== */
+main {
+  max-width: 400px;
+  margin: 100px auto 80px auto; /* espaço extra antes do footer */
+  background: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h1 {
+  color: #004aad;
+  margin-bottom: 25px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+
+input:focus {
+  border-color: #0077ff;
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0, 119, 255, 0.06);
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #1565c0, #0d47a1);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #1e88e5, #1565c0);
+}
+
+/* ==========================
+   LINKS AUXILIARES (LOGIN) - remove bolinhas e estilo de link
+   mantém clicável, sem sublinhado, sem cor de link
+   usa selectors que não exigem alterar HTML
+========================== */
+/* garante que qualquer ul dentro de .links-login/.links-cadastro perca marcadores */
+.links-login ul,
+.links-cadastro ul {
+  list-style: none !important;
+  margin: 0;
+  padding: 0;
+}
+
+/* cada item em sua linha, com espaçamento */
+.links-login ul li,
+.links-cadastro ul li {
+  display: block;
+  margin: 6px 0;
+  padding: 0;
+}
+
+/* estilo "não-link" — cor normal, sem sublinhado; ainda clicável */
+.links-login a,
+.links-login a:visited,
+.links-login a:active,
+.links-cadastro a,
+.links-cadastro a:visited,
+.links-cadastro a:active {
+  color: inherit !important;         /* herda cor do texto (não azul) */
+  text-decoration: none !important;  /* remove sublinhado */
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-block;
+  padding: 2px 4px;
+}
+
+/* hover apenas leve feedback (sem trocar cor pra azul) */
+.links-login a:hover,
+.links-cadastro a:hover {
+  opacity: 0.95;
+  text-decoration: none !important;
+}
+
+/* foco — manter acessível mas sem o estilo default do navegador */
+.links-login a:focus,
+.links-cadastro a:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(21, 101, 192, 0.12);
+  border-radius: 4px;
+}
+
+/* ==========================
+   RODAPÉ
+========================== */
+footer {
+  width: 100%;
+  background: linear-gradient(90deg, #0d47a1 0%, #0b63b8 100%);
+  color: #fff;
+  padding: 36px 20px;
+  text-align: center;
+  box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.12);
+  position: relative;
+  z-index: 900;
+}
+
+footer .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+footer .lista {
+  list-style: none;
+  text-align: left;
+  min-width: 200px;
+}
+
+footer .lista li {
+  margin-bottom: 10px;
+}
+
+footer .lista li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+footer .lista li a:hover {
+  color: #fff;
+}
+
+footer .f2 {
+  margin-top: 20px;
+}
+
+footer .f2 a {
+  margin-right: 15px;
+  text-decoration: none;
+  color: #ccc;
+  transition: 0.3s ease;
+}
+
+footer .f2 a:hover {
+  color: #ffeb3b;
+}
+
+footer .f3 {
+  font-size: 14px;
+  color: #bbb;
+  margin-top: 25px;
+}
+
+/* ==========================
+   MODO ESCURO
+========================== */
+body.dark-mode {
+  background: #121212;
+  color: #eee;
+}
+
+body.dark-mode header {
+  background: #1e1e1e;
+}
+
+body.dark-mode nav ul li a {
+  color: #eee;
+}
+
+body.dark-mode nav ul li a:hover {
+  color: #1abc9c;
+}
+
+body.dark-mode main {
+  background: #1e1e1e;
+  color: #ddd;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode input {
+  background: #222;
+  border-color: #444;
+  color: #fff;
+}
+
+body.dark-mode button {
+  background: linear-gradient(135deg, #1e88e5, #0d47a1);
+}
+
+body.dark-mode footer {
+  background: #07080a;
+  color: #aaa;
+}
+
+/* ==========================
+   RESPONSIVIDADE
+========================== */
+@media (max-width: 800px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .menu-central nav ul {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  footer .container {
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+  }
+
+  footer .lista {
+    text-align: center;
+  }
+
+  footer .f2 a {
+    display: inline-block;
+    margin: 8px;
+  }
+
+  /* mobile: se o botão master tiver overlap, manter lua visível sem cobrir */
+  #darkModeToggle {
+    right: 16px;
+    bottom: 16px;
+    width: 48px;
+    height: 48px;
+  }
+}
